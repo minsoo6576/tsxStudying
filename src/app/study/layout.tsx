@@ -1,5 +1,9 @@
 // app/monitoring/layout.tsx
-export default function MonitoringLayout({ children }: { children: React.ReactNode }) {
+export default function MonitoringLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex flex-col h-screen">
       {/* 상단(본문) 영역: 남은 높이 전부 */}
@@ -12,16 +16,17 @@ export default function MonitoringLayout({ children }: { children: React.ReactNo
         {/* 메인: 4등분(2x2) */}
         <main className="flex-1 bg-white text-black overflow-auto p-4">
           <div className="grid grid-cols-2 grid-rows-2 gap-4 h-full">
-            <div className="border rounded p-4">1번 영역</div>
+            <div className="border rounded p-4">
+              layout파일 하나 더 만들어봄. 메인 컴포넌트 안의
+              레이아웃이랄까.{" "}
+            </div>
             <div className="border rounded p-4">2번 영역</div>
             <div className="border rounded p-4">3번 영역</div>
 
             {/* ✅ 여기서 page.tsx가 들어갈 자리 */}
             <div className="border rounded p-4">
               4번 영역
-              <div className="mt-3 border-t pt-3">
-                {children}
-              </div>
+              <div className="mt-3 border-t pt-3">{children}</div>
             </div>
           </div>
         </main>
@@ -34,3 +39,15 @@ export default function MonitoringLayout({ children }: { children: React.ReactNo
     </div>
   );
 }
+// export default function MonitoringLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <div>
+//       hi
+//       {children}
+//     </div>
+//   );
+// }
